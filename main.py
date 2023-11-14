@@ -59,6 +59,7 @@ async def top(ctx):
     else:
         await ctx.send(f'Failed to fetch leaderboard. Status code: {response.status_code}')
 
+'''
 @slash.slash(name='global', description='Get top 10 players from global Advent of Code leaderboard')
 async def global_leaderboard(ctx):
     url = f'https://adventofcode.com/2023/leaderboard/public/global.json'
@@ -79,6 +80,7 @@ async def global_leaderboard(ctx):
         await ctx.send('\n'.join(global_top_stats))
     else:
         await ctx.send(f'Failed to fetch global leaderboard. Status code: {response.status_code}')
+'''
 
 @bot.command(name='leaderboard', aliases=['lb'])
 async def cmd_leaderboard(ctx):
@@ -88,9 +90,11 @@ async def cmd_leaderboard(ctx):
 async def cmd_top(ctx):
     await ctx.invoke(bot.get_command('top'))
 
+'''
 @bot.command(name='global')
 async def cmd_global(ctx):
     await ctx.invoke(bot.get_command('global'))
+'''
 
 @bot.command(name='help')
 async def help_command(ctx):
